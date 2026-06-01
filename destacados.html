@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destacados - Descubrí Argentina</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Descubrí Argentina</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="destacados.html">Destacados</a>
+            <a href="listado.html">Listado</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Destinos destacados</h2>
+        <p>Hacé clic en los destinos que te gustaría visitar</p>
+
+        <div class="contenedor-tarjetas" id="contenedor">
+
+            <div class="tarjeta" data-destino="Bariloche">
+                <h3>🏔️ Bariloche</h3>
+                <p>Río Negro</p>
+            </div>
+
+            <div class="tarjeta" data-destino="Puerto Madryn">
+                <h3>🌊 Puerto Madryn</h3>
+                <p>Chubut</p>
+            </div>
+
+            <div class="tarjeta" data-destino="Iguazú">
+                <h3>🌿 Iguazú</h3>
+                <p>Misiones</p>
+            </div>
+
+            <div class="tarjeta" data-destino="Cafayate">
+                <h3>🏜️ Cafayate</h3>
+                <p>Salta</p>
+            </div>
+
+            <div class="tarjeta" data-destino="Ushuaia">
+                <h3>❄️ Ushuaia</h3>
+                <p>Tierra del Fuego</p>
+            </div>
+
+            <div class="tarjeta" data-destino="Talampaya">
+                <h3>🪨 Talampaya</h3>
+                <p>La Rioja</p>
+            </div>
+
+        </div>
+
+        <p id="contador" class="info">Ningún destino seleccionado</p>
+
+    </main>
+
+    <footer>
+        <p>Descubrí Argentina &copy; 2026 🏆 ¡Año del Mundial!</p>
+    </footer>
+
+    <script>
+        // Seleccionamos todas las tarjetas
+        const tarjetas = document.querySelectorAll(".tarjeta");
+        const contador = document.getElementById("contador");
+
+        // Función para actualizar el contador
+        function actualizarContador() {
+            const seleccionadas = document.querySelectorAll(".tarjeta.seleccionada");
+            if (seleccionadas.length === 0) {
+                contador.textContent = "Ningún destino seleccionado";
+            } else if (seleccionadas.length === 1) {
+                contador.textContent = "1 destino seleccionado";
+            } else {
+                contador.textContent = seleccionadas.length + " destinos seleccionados";
+            }
+        }
+
+        // Evento de clic en cada tarjeta
+        tarjetas.forEach(function(tarjeta) {
+            tarjeta.addEventListener("click", function() {
+                tarjeta.classList.toggle("seleccionada");
+                actualizarContador();
+            });
+        });
+    </script>
+
+</body>
+</html>
