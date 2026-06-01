@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubrí Argentina</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1> Descubrí Argentina</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="destacados.html">Destacados</a>
+            <a href="listado.html">Listado</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Meriendas típicas argentinas</h2>
+        <ul id="lista-meriendas" class="lista-meriendas"></ul>
+
+        <button id="btn-contar">¿Cuántas meriendas hay?</button>
+        <p id="resultado" class="info"></p>
+    </main>
+
+    <footer>
+        <p>Descubrí Argentina &copy; 2026 🏆 ¡Año del Mundial!</p>
+    </footer>
+
+    <script>
+        // Arreglo con meriendas típicas argentinas
+        const meriendas = [
+            "Mate con facturas",
+            "Medialunas",
+            "Tostadas con dulce de leche",
+            "Alfajores",
+            "Torta fritas",
+            "Bizcochitos de grasa"
+        ];
+
+        // Mostramos las meriendas en la lista usando forEach
+        const lista = document.getElementById("lista-meriendas");
+
+        meriendas.forEach(function(merienda) {
+            const item = document.createElement("li");
+            item.textContent = merienda;
+            lista.appendChild(item);
+        });
+
+        // Evento del botón para contar meriendas
+        const boton = document.getElementById("btn-contar");
+        const resultado = document.getElementById("resultado");
+
+        boton.addEventListener("click", function() {
+            resultado.textContent = "Hay " + meriendas.length + " meriendas en la lista.";
+        });
+    </script>
+
+</body>
+</html>

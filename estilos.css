@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #003366;
+}
+header {
+    background-color: #75AADB;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+nav a:hover {
+    border-bottom: 2px solid #F4C542;
+    color: #F4C542;
+}
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #003366;
+    border-left: 5px solid #75AADB;
+    padding-left: 10px;
+}
+.tarjeta {
+    background-color: #ffffff;
+    border: 2px solid #75AADB;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.tarjeta:hover {
+    transform: scale(1.05);
+}
+.tarjeta.seleccionada {
+    background-color: #75AADB;
+    color: #ffffff;
+    border-color: #003366;
+}
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.lista-meriendas {
+    list-style: none;
+    margin-top: 20px;
+}
+.lista-meriendas li {
+    background-color: #ffffff;
+    border-left: 5px solid #F4C542;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+button {
+    background-color: #003366;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background-color: #F4C542;
+    color: #003366;
+}
+
+.info {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #003366;
+}
+
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
