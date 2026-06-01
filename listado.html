@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado - Descubrí Argentina</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Descubrí Argentina</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="destacados.html">Destacados</a>
+            <a href="listado.html">Listado</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Listado de destinos</h2>
+        <p>Filtrá los destinos por región</p>
+
+        <div>
+            <button id="btn-todos">🌎 Todos</button>
+            <button id="btn-patagonia">🏔️ Solo Patagonia</button>
+        </div>
+
+        <div class="contenedor-tarjetas" id="contenedor-listado"></div>
+
+    </main>
+
+    <footer>
+        <p>Descubrí Argentina &copy; 2026 🏆 ¡Año del Mundial!</p>
+    </footer>
+
+    <script>
+        // Arreglo con destinos y sus regiones
+        const destinos = [
+            { nombre: "Bariloche", region: "Patagonia", emoji: "🏔️" },
+            { nombre: "Ushuaia", region: "Patagonia", emoji: "❄️" },
+            { nombre: "Puerto Madryn", region: "Patagonia", emoji: "🌊" },
+            { nombre: "Iguazú", region: "Norte", emoji: "🌿" },
+            { nombre: "Cafayate", region: "Norte", emoji: "🏜️" },
+            { nombre: "Talampaya", region: "Norte", emoji: "🪨" },
+            { nombre: "Mendoza", region: "Cuyo", emoji: "🍷" },
+            { nombre: "Mar del Plata", region: "Centro", emoji: "🌊" }
+        ];
+
+        const contenedor = document.getElementById("contenedor-listado");
+
+        // Función para mostrar destinos en pantalla
+        function mostrarDestinos(lista) {
+            contenedor.innerHTML = "";
+            lista.forEach(function(destino) {
+                const tarjeta = document.createElement("div");
+                tarjeta.classList.add("tarjeta");
+                tarjeta.innerHTML = `
+                    <h3>${destino.emoji} ${destino.nombre}</h3>
+                    <p>${destino.region}</p>
+                `;
+                contenedor.appendChild(tarjeta);
+            });
+        }
+
+        // Mostramos todos al cargar la página
+        mostrarDestinos(destinos);
+
+        // Botón mostrar todos
+        document.getElementById("btn-todos").addEventListener("click", function() {
+            mostrarDestinos(destinos);
+        });
+
+        // Botón filtrar solo Patagonia usando filter
+        document.getElementById("btn-patagonia").addEventListener("click", function() {
+            const soloPatagonia = destinos.filter(function(destino) {
+                return destino.region === "Patagonia";
+            });
+            mostrarDestinos(soloPatagonia);
+        });
+    </script>
+
+</body>
+</html>
